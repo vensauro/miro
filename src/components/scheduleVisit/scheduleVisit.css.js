@@ -40,7 +40,7 @@ export const SchedulerButton = styled.a`
 
   border: none;
   border-bottom: 7px solid #933b60;
-  border-radius: 0px 0px 11px 11px;
+  border-radius: 5px;
 
   display: flex;
   justify-content: center;

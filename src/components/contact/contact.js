@@ -7,9 +7,26 @@ import {
   DescriptionText,
   DescriptionTitle,
   FormContainer,
-  Input,
+  InputContainer,
+  InputLabel,
+  StyledInput,
+  SubmitButton,
 } from './contact.css';
 import descriptionImage from 'images/bg03.png';
+
+function Input({ name, multiline }) {
+  return (
+    <InputContainer>
+      <StyledInput
+        id={name}
+        required
+        multiline={multiline}
+        as={multiline ? 'textfield' : 'input'}
+      />
+      <InputLabel htmlFor={name}>{name}</InputLabel>
+    </InputContainer>
+  );
+}
 
 export function Contact() {
   return (
@@ -20,7 +37,9 @@ export function Contact() {
             src={descriptionImage}
             alt="imagem de detalhe sem significado"
           />
-          <DescriptionTitle>AGENDE UMA VISITA</DescriptionTitle>
+          <DescriptionTitle>
+            AGENDE <br /> UMA VISITA
+          </DescriptionTitle>
           <DescriptionText>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry.
@@ -28,7 +47,13 @@ export function Contact() {
         </DescriptionImageContainer>
       </DescriptionContainer>
       <FormContainer>
-        <Input />
+        <Input name="NOME" />
+        <Input name="E-MAIL" type="email" />
+        <Input name="TELEFONE" type="tel" />
+        <Input name="SÉRIE PRETENDIDA" type="text" />
+        <Input name="MOTIVO" type="text" />
+        <Input name="MENSAGEM" type="text" multiline />
+        <SubmitButton value="ENVIAR" />
       </FormContainer>
     </Container>
   );
