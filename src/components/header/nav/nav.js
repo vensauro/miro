@@ -1,15 +1,24 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import { Container } from './nav.css';
+import { Container, SocialIcon } from './nav.css';
+import FacebookIcon from 'images/icon_fb.png';
+import TwitterIcon from 'images/icon_tt.png';
+import YoutubeIcon from 'images/icon_yt.png';
+import InstagramIcon from 'images/icon_ig.png';
 
-const Nav = () => (
+const Nav = ({ twitter_url, facebook_url, youtube_url, instagram_url }) => (
   <Container>
     <ul>
       <li>
-        <Link to="/about">About</Link>
+        <SocialIcon link={facebook_url} img={FacebookIcon} alt="facebook" />
       </li>
       <li>
-        <a href="https://github.com/fabe/gatsby-universal">GitHub</a>
+        <SocialIcon link={twitter_url} img={TwitterIcon} alt="twitter" />
+      </li>
+      <li>
+        <SocialIcon link={youtube_url} img={YoutubeIcon} alt="youtube" />
+      </li>
+      <li>
+        <SocialIcon link={instagram_url} img={InstagramIcon} alt="instagram" />
       </li>
     </ul>
   </Container>

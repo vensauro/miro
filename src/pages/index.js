@@ -1,38 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Layout from 'components/layout';
-import Box from 'components/box';
-import Title from 'components/title';
-import Gallery from 'components/gallery';
-import IOExample from 'components/io-example';
-import Modal from 'containers/modal';
+import { Start } from 'components/start';
+import { CicleCards } from 'components/cicleCards';
+import { ScheduleVisit } from 'components/scheduleVisit';
+import { VideoCarousel } from '../components/videoCarousel';
+import { Contact } from '../components/contact';
+
 import { graphql } from 'gatsby';
 
 const Index = ({ data }) => (
   <Layout>
-    <Box>
-      <Title as="h2" size="large">
-        {data.homeJson.content.childMarkdownRemark.rawMarkdownBody}
-      </Title>
-      <Modal>
-        <video
-          src="https://i.imgur.com/gzFqNSW.mp4"
-          playsInline
-          loop
-          autoPlay
-          muted
-        />
-      </Modal>
-    </Box>
-    <Gallery items={data.homeJson.gallery} />
-    <div style={{ height: '50vh' }} />
-    <IOExample />
+    <Start slides={data.homeJson.carousel} />
+    <CicleCards cicles={data.homeJson.cicles} />
+    <ScheduleVisit>AGENDE UMA VISITA</ScheduleVisit>
+    <VideoCarousel />
+    <ScheduleVisit>CONHEÇA O COLÉGIO</ScheduleVisit>
+    <Contact />
   </Layout>
 );
-
-Index.propTypes = {
-  data: PropTypes.object.isRequired,
-};
 
 export default Index;
 
@@ -46,17 +32,24 @@ export const query = graphql`
           rawMarkdownBody
         }
       }
-      gallery {
-        title
-        copy
-        image {
-          childImageSharp {
-            fluid(maxHeight: 500, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
+      carousel {
+        text
       }
+      cicles {
+        title
+        subtitle
+      }
+      # gallery {
+      #   title
+      #   copy
+      #   image {
+      #     childImageSharp {
+      #       fluid(maxHeight: 500, quality: 90) {
+      #         ...GatsbyImageSharpFluid_withWebp
+      #       }
+      #     }
+      #   }
+      # }
     }
   }
 `;

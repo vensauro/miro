@@ -33,8 +33,13 @@ export default createGlobalStyle`
     font-size: 62.5%;
   }
 
+  * {
+    font-family: 'Titillium Web', sans-serif;
+    box-sizing: border-box;
+  }
+
   body {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    /* font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; */
     line-height: 1;
     font-size: 1.6rem;
     color: #000;

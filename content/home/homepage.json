@@ -1,19 +1,15 @@
 {
   "title": "Home",
   "content": "intro.md",
-  "gallery": [{
-    "title": "React Context",
-    "copy": "For global styles.",
-    "image": "../images/gallery/react-context.jpg"
-  },
-  {
-    "title": "Page Transitions",
-    "copy": "Component-based for easy usage.",
-    "image": "../images/gallery/page-transitions.jpg"
-  },
-  {
-    "title": "Intersection Observer",
-    "copy": "Including a polyfill for Safari.",
-    "image": "../images/gallery/intersection-observer.jpg"
-  }]
+  "carousel": [
+    {"text": "Lorem Ipsum is simply dummy text of the printing."},
+    {"text": "No entanto, não podemos esquecer que a necessidade de renovação..."},
+    {"text": "Lorem Ipsum is simply dummy text of the printing."},
+    {"text": "Lorem Ipsum is simply dummy text of the printing."}
+  ],
+  "cicles": [
+    {"title": "Lorem Ipsum is simply", "subtitle": "Lorem Ipsum is simply dummy."},
+    {"title": "Lorem Ipsum is simply", "subtitle": "Lorem Ipsum is simply dummy."},
+    {"title": "Lorem Ipsum is simply", "subtitle": "Lorem Ipsum is simply dummy."}
+  ]
 }

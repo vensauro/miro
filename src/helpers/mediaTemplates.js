@@ -1,3 +1,4 @@
+import React from 'react';
 import { css } from 'styled-components';
 import BREAKPOINTS from 'constants/breakpoints';
 
@@ -31,3 +32,19 @@ const MEDIA = Object.keys(BREAKPOINTS).reduce((acc, label) => {
 }, {});
 
 export default MEDIA;
+
+export const useMediaQuery = (query, whenTrue = true, whenFalse = false) => {
+  if (typeof window === 'undefined' || typeof window.matchMedia === 'undefined')
+    return whenFalse;
+
+  const mediaQuery = window.matchMedia(query);
+  const [match, setMatch] = React.useState(!!mediaQuery.matches);
+
+  React.useEffect(() => {
+    const handler = () => setMatch(!!mediaQuery.matches);
+    mediaQuery.addListener(handler);
+    return () => mediaQuery.removeListener(handler);
+  }, []);
+
+  return match ? whenTrue : whenFalse;
+};
