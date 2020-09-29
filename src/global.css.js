@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { accent } from 'constants/theme';
+import 'typeface-titillium-web';
 
 export default createGlobalStyle`
   html, body, div, span, applet, object, iframe,
