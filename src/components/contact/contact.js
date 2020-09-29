@@ -21,7 +21,7 @@ function Input({ name, multiline }) {
         id={name}
         required
         multiline={multiline}
-        as={multiline ? 'textfield' : 'input'}
+        as={multiline ? 'textarea' : 'input'}
       />
       <InputLabel htmlFor={name}>{name}</InputLabel>
     </InputContainer>

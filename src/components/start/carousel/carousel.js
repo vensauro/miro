@@ -54,6 +54,10 @@ const StyledDots = styled(DotGroup)`
     width: 25px;
     margin: 0 12px;
   }
+
+  & .carousel__dot--selected {
+    background: #fbbf51;
+  }
 `;
 
 export function StartCarousel({ slides }) {

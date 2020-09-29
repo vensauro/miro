@@ -1,11 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import Layout from 'components/layout';
 import { Start } from 'components/start';
 import { CicleCards } from 'components/cicleCards';
 import { ScheduleVisit } from 'components/scheduleVisit';
-import { VideoCarousel } from '../components/videoCarousel';
-import { Contact } from '../components/contact';
+import { VideoCarousel } from 'components/videoCarousel';
+import { Contact } from 'components/contact';
+import { VideoPed } from 'components/videoPed';
 
 import { graphql } from 'gatsby';
 
@@ -17,6 +18,7 @@ const Index = ({ data }) => (
     <VideoCarousel />
     <ScheduleVisit>CONHEÇA O COLÉGIO</ScheduleVisit>
     <Contact />
+    <VideoPed />
   </Layout>
 );
 

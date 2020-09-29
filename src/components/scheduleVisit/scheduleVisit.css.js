@@ -55,7 +55,7 @@ export const SchedulerButton = styled.a`
     width: 90%;
     height: 30%;
 
-    font-size: 3rem;
+    font-size: 2.8rem;
 
     padding: 2%;
   `}

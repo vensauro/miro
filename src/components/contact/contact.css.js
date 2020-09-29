@@ -165,6 +165,7 @@ export const StyledInput = styled.input`
       & + label {
         margin-bottom: 90px;
       }
+      font-size: 2rem;
     `}
 `;
 
