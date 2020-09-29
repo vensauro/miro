@@ -7,6 +7,7 @@ import { ScheduleVisit } from 'components/scheduleVisit';
 import { VideoCarousel } from 'components/videoCarousel';
 import { Contact } from 'components/contact';
 import { VideoPed } from 'components/videoPed';
+import { About } from 'components/about';
 
 import { graphql } from 'gatsby';
 
@@ -19,6 +20,7 @@ const Index = ({ data }) => (
     <ScheduleVisit>CONHEÇA O COLÉGIO</ScheduleVisit>
     <Contact />
     <VideoPed />
+    <About />
   </Layout>
 );
 
