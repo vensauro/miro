@@ -12,8 +12,7 @@ import { About } from 'components/about';
 import { graphql } from 'gatsby';
 
 const Index = ({ data }) => (
-  <Layout>
-    {console.log({ data })}
+  <Layout siteLink={data.site.siteMetadata.siteOfficial}>
     <Start slides={data.homeJson.carousel} />
     <CicleCards cicles={data.homeJson.cicles} />
     <ScheduleVisit href="#contato">AGENDE UMA VISITA</ScheduleVisit>
@@ -23,7 +22,7 @@ const Index = ({ data }) => (
     </ScheduleVisit>
     <Contact />
     <VideoPed />
-    <About />
+    <About siteLink={data.site.siteMetadata.siteOfficial} />
   </Layout>
 );
 

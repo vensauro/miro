@@ -3,15 +3,12 @@ import { MiroLogo } from '../header/header.css';
 import Nav from '../header/nav/nav';
 import { AboutText, Container } from './about.css';
 import { useMediaQuery } from '../../helpers/mediaTemplates';
-import { siteMetaDataQuery } from '../head/head';
-import { useStaticQuery } from 'gatsby';
 
-export function About() {
+export function About({ siteLink }) {
   const isMobile = useMediaQuery('(max-width: 480px)');
-  const data = useStaticQuery(siteMetaDataQuery);
   return (
     <Container>
-      <MiroLogo href={data.site.siteMetadata.siteOfficial} />
+      <MiroLogo href={siteLink} />
       <AboutText>
         Rua Cândido Portinari, 58, Morro do Ipiranga {isMobile ? <br /> : '- '}
         Barra - Salvador/BA - CEP: 40140-440 <br />

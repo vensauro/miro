@@ -20,13 +20,11 @@ const AnimatedContainer = posed.div({
   },
 });
 
-const Header = () => {
+const Header = ({ siteLink }) => {
   return (
     <AnimatedContainer style={{ position: 'relative' }}>
       <Container>
-        <Link to="/">
-          <MiroLogo />
-        </Link>
+        <MiroLogo href={siteLink} />
 
         <Nav size={5} />
       </Container>

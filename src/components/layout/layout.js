@@ -5,11 +5,11 @@ import Head from 'components/head';
 import Header from 'components/header';
 import GlobalStyle from 'global.css.js';
 
-const Layout = ({ data, children }) => (
+const Layout = ({ siteLink, children }) => (
   <div>
     <GlobalStyle />
     <Head />
-    <Header {...data.site.siteMetadata.social} />
+    <Header siteLink={siteLink} />
     {children}
   </div>
 );
