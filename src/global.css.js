@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import { accent } from 'constants/theme';
-import 'typeface-titillium-web';
 
 export default createGlobalStyle`
   html, body, div, span, applet, object, iframe,
@@ -20,7 +19,7 @@ export default createGlobalStyle`
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
+    font-family: 'Titillium Web', sans-serif;
     vertical-align: baseline;
   }
 
@@ -37,10 +36,11 @@ export default createGlobalStyle`
   * {
     font-family: 'Titillium Web', sans-serif;
     box-sizing: border-box;
+    scroll-behavior: smooth;
   }
 
   body {
-    /* font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; */
+    font-family: 'Titillium Web', sans-serif;
     line-height: 1;
     font-size: 1.6rem;
     color: #000;

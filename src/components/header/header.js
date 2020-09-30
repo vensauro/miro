@@ -20,7 +20,7 @@ const AnimatedContainer = posed.div({
   },
 });
 
-const Header = ({ twitter_url, facebook_url, youtube_url, instagram_url }) => {
+const Header = () => {
   return (
     <AnimatedContainer style={{ position: 'relative' }}>
       <Container>
@@ -28,7 +28,7 @@ const Header = ({ twitter_url, facebook_url, youtube_url, instagram_url }) => {
           <MiroLogo />
         </Link>
 
-        <Nav {...{ twitter_url, facebook_url, youtube_url, instagram_url }} />
+        <Nav size={5} />
       </Container>
     </AnimatedContainer>
   );

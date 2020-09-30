@@ -12,7 +12,7 @@ const Container = styled.div`
   align-items: center;
 
   ${MEDIA.PHONE`
-    width: 38%;
+    width: 40%;
   `}
 `;
 
@@ -26,21 +26,21 @@ const StyledSlider = styled(Slider)`
   `}
 `;
 const StyledSlide = styled(Slide)`
-  font-size: 6.7rem;
+  font-size: 6rem;
   color: #fbbf51;
   font-family: 'Titillium Web';
   font-weight: bold;
 
   ${MEDIA.PHONE`
     word-wrap: break-word;
-    font-size: 4.3rem;
+    font-size: 3rem;
   `}
 `;
 
 const StyledDots = styled(DotGroup)`
   display: flex;
   position: absolute;
-  bottom: 27%;
+  bottom: 20%;
 
   ${MEDIA.PHONE`
     bottom: 10%;

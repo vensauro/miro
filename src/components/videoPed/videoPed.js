@@ -1,5 +1,5 @@
 import React from 'react';
-import { Title, StyledYoutube, Container } from './videoPed.css';
+import { Title, StyledYoutube, Container, ScreenLimiter } from './videoPed.css';
 
 export function YoutubeEmbed({
   link = 'https://www.youtube-nocookie.com/embed/7dNZ0kYKq58',
@@ -22,10 +22,12 @@ export function YoutubeEmbed({
 export function VideoPed() {
   return (
     <Container>
-      <Title>
-        JORNADA <br /> PEDAGÓGICA
-      </Title>
-      <YoutubeEmbed />
+      <ScreenLimiter>
+        <Title>
+          JORNADA <br /> PEDAGÓGICA
+        </Title>
+        <YoutubeEmbed />
+      </ScreenLimiter>
     </Container>
   );
 }

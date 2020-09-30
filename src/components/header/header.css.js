@@ -21,11 +21,11 @@ export const Container = styled.header`
 `;
 
 export const MiroLogo = styled(MiroSvg)`
-  height: 9rem;
+  height: 6rem;
   width: 460px;
 
   ${MEDIA.PHONE`
-    height: 3.8rem;
+    height: 3.6rem;
     width: 170px;
   `}
 `;

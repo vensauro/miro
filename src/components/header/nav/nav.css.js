@@ -23,17 +23,17 @@ export const Container = styled.nav`
 `;
 
 const Img = styled.img`
-  height: 7rem;
+  height: ${p => (p.size ? `${p.size}rem` : '7rem')};
 
   ${MEDIA.PHONE`
-    height: 3.8rem;
+    height: 3.6rem;
   `}
 `;
 
-export function SocialIcon({ link, img, alt }) {
+export function SocialIcon({ link, img, alt, size }) {
   return (
     <a href={link}>
-      <Img src={img} alt={alt} />
+      <Img src={img} alt={alt} size={size} />
     </a>
   );
 }

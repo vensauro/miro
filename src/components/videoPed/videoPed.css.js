@@ -3,12 +3,19 @@ import MEDIA from 'helpers/mediaTemplates';
 
 export const Container = styled.section`
   background: #fbbf51;
-  height: 70vh;
+  height: 100%;
+`;
+
+export const ScreenLimiter = styled.div`
+  width: 1200px;
+  margin: 0 auto;
+  padding: 90px 0;
 
   display: flex;
   justify-content: space-between;
 
   ${MEDIA.PHONE`
+    width: 100%;
     flex-direction: column;
     align-items: center;
   `}
@@ -20,29 +27,19 @@ export const Title = styled.h3`
   font-size: 7rem;
   font-weight: bold;
 
-  margin-top: 7%;
-  margin-left: 10%;
-
   ${MEDIA.PHONE`
     font-size: 6rem;
 
     margin-top: 12%;
-    margin-left: 0;
+    margin-bottom: 15%;
   `}
 `;
 
 export const StyledYoutube = styled.div`
   width: 680px;
-  height: 440px;
-
-  margin-top: 9%;
-  margin-right: 18%;
+  height: 360px;
 
   ${MEDIA.PHONE`
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 15%;
-
     width: 90%;
     height: 180px;
   `}

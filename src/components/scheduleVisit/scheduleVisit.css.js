@@ -3,7 +3,7 @@ import MEDIA from 'helpers/mediaTemplates';
 
 export const Container = styled.div`
   width: 100%;
-  height: 270px;
+  height: 256px;
 
   display: flex;
   justify-content: flex-end;
@@ -29,13 +29,14 @@ export const ButtonContainer = styled.div`
 `;
 
 export const SchedulerButton = styled.a`
-  height: 50%;
+  height: 45%;
   width: 55%;
 
   background: #fbbf51;
 
+  font-family: 'Titillium Web';
   font-weight: bold;
-  font-size: 5rem;
+  font-size: 4.8rem;
   color: #933b60;
 
   border: none;
@@ -55,7 +56,7 @@ export const SchedulerButton = styled.a`
     width: 90%;
     height: 30%;
 
-    font-size: 2.8rem;
+    font-size: 2.6rem;
 
     padding: 2%;
   `}
