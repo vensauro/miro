@@ -188,6 +188,10 @@ export const SubmitButton = styled.input.attrs({ type: 'submit' })`
 export const Select = styled(RSelect)`
   width: 600px;
 
+  ${MEDIA.PHONE`
+    width: 100%;
+  `}
+
   & .react-select__indicator-separator {
     display: none;
   }
@@ -198,8 +202,6 @@ export const Select = styled(RSelect)`
   }
 
   & .react-select__control {
-    width: 600px;
-
     background: #933b60;
 
     border: none;
@@ -208,6 +210,9 @@ export const Select = styled(RSelect)`
 
   & .react-select__value-container {
     padding: 15px 16px;
+    ${MEDIA.PHONE`
+      padding: 7px;
+    `}
   }
 
   & .react-select__placeholder,
@@ -216,6 +221,10 @@ export const Select = styled(RSelect)`
     color: white;
     font-family: 'Titillium Web';
     font-size: 3rem;
+
+    ${MEDIA.PHONE`
+      font-size: 2rem;
+    `}
   }
 
   & .react-select__menu {

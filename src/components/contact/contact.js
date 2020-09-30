@@ -31,7 +31,7 @@ function Input({ name, multiline }) {
 
 export function Contact({ reasons, visitText }) {
   return (
-    <Container id="contato">
+    <Container id="contato" data-netlify="true">
       <DescriptionContainer>
         <DescriptionImageContainer>
           <DescriptionImage
@@ -57,7 +57,6 @@ export function Contact({ reasons, visitText }) {
             options={reasons.map(e => ({ value: e, label: e }))}
           />
         </InputContainer>
-        <Input name="MOTIVO" type="text" />
         <Input name="MENSAGEM" type="text" multiline />
         <InputContainer>
           <SubmitButton value="ENVIAR" />
