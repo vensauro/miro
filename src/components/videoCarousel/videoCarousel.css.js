@@ -44,6 +44,11 @@ export const buttonStyle = css`
   font-weight: bold;
   font-size: 3rem;
   color: #fbbf51;
+
+  &:focus {
+    outline: 0 !important;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+  }
 `;
 
 export const Back = styled(ButtonBack)`

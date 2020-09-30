@@ -1,5 +1,6 @@
 import React from 'react';
 import StudentImgSrc from 'images/img_estudante_desktop.png';
+import StudentImgSrcMobile from 'images/img_estudante_m.png';
 import MEDIA from 'helpers/mediaTemplates';
 import styled from 'styled-components';
 
@@ -9,7 +10,7 @@ export const Img = styled.img`
   margin-right: 8%;
 
   ${MEDIA.PHONE`
-    margin-right: -30%;
+    margin-right: -25%;
 
     height: 80%;
   `}
@@ -28,7 +29,7 @@ export function StudentImg() {
   return (
     <Picture>
       <source media="(min-width: 481px)" srcSet={StudentImgSrc} />
-      <source media="(max-width: 480px)" srcSet={StudentImgSrc} />
+      <source media="(max-width: 480px)" srcSet={StudentImgSrcMobile} />
 
       <Img alt="Garoto com mochila e mascara acenando" />
     </Picture>
