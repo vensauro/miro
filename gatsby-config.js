@@ -7,6 +7,18 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/images/icon.png',
+        name: siteConfig.siteTitle,
+        short_name: siteConfig.siteTitleShort,
+        start_url: '/',
+        background_color: siteConfig.backgroundColor,
+        theme_color: siteConfig.themeColor,
+        display: 'standalone',
+      },
+    },
     'gatsby-plugin-offline',
     'gatsby-transformer-json',
     'gatsby-transformer-remark',
