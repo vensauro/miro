@@ -5,7 +5,7 @@ module.exports = {
   siteTitleShort: 'Matrícula 2021',
   siteDescription:
     'O Colégio Miró, através da educação inovadora, estimula habilidades e ensina com criatividade, proporcionando aos alunos uma melhor compreensão do mundo.',
-  siteUrl: 'matricula2021.colegiomiro.com.br',
+  siteUrl: 'https://matricula2021.colegiomiro.com.br',
   siteOfficial: 'https://www.colegiomiro.com.br',
   themeColor: '#933B60',
   backgroundColor: '#fff',
