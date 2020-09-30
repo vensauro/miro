@@ -1,6 +1,5 @@
 import React from 'react';
 import StudentImgSrc from 'images/img_estudante_desktop.png';
-import StudentImgSrcMobile from 'images/img_estudante_mobile.png';
 import MEDIA from 'helpers/mediaTemplates';
 import styled from 'styled-components';
 
@@ -10,7 +9,9 @@ export const Img = styled.img`
   margin-right: 8%;
 
   ${MEDIA.PHONE`
-    margin-right: -25%;
+    margin-right: -30%;
+
+    height: 80%;
   `}
 `;
 
@@ -21,17 +22,13 @@ export const Picture = styled.picture`
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-
-  ${MEDIA.PHONE`
-    height: 100%;
-  `}
 `;
 
 export function StudentImg() {
   return (
     <Picture>
       <source media="(min-width: 481px)" srcSet={StudentImgSrc} />
-      <source media="(max-width: 480px)" srcSet={StudentImgSrcMobile} />
+      <source media="(max-width: 480px)" srcSet={StudentImgSrc} />
 
       <Img alt="Garoto com mochila e mascara acenando" />
     </Picture>

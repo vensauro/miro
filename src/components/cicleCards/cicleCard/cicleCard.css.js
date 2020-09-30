@@ -34,6 +34,7 @@ export const Title = styled.h4`
 
 export const SubTitle = styled.h6`
   font-size: 2.7rem;
+  font-weight: normal;
 
   width: 65%;
 
