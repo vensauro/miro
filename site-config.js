@@ -1,20 +1,22 @@
 const path = require('path');
 
 module.exports = {
-  siteTitle: 'Gatsby Universal',
-  siteTitleShort: 'GatsbyU',
-  siteDescription: 'An opinionated starter for Gatsby.',
-  siteUrl: 'https://gu.fabianschultz.com',
+  siteTitle: 'Miró',
+  siteTitleShort: 'Matrícula 2021',
+  siteDescription:
+    'O Colégio Miró, através da educação inovadora, estimula habilidades e ensina com criatividade, proporcionando aos alunos uma melhor compreensão do mundo.',
+  siteUrl: 'matricula2021.colegiomiro.com.br',
+  siteOfficial: 'https://www.colegiomiro.com.br',
   themeColor: '#933B60',
   backgroundColor: '#fff',
   pathPrefix: null,
   logo: path.resolve(__dirname, 'src/images/icon.png'),
   social: {
-    twitter: 'gatsbyjs',
-    fbAppId: '966242223397117',
-    twitter_url: 'https://www.facebook.com/ivenseducacional',
-    facebook_url: 'https://www.facebook.com/ivenseducacional',
-    youtube_url: 'https://www.facebook.com/ivenseducacional',
-    instagram_url: 'https://www.facebook.com/ivenseducacional',
+    twitter: 'colegiomiro',
+    // fbAppId: '',
+    twitter_url: 'https://twitter.com/colegiomiro',
+    facebook_url: ' https://www.facebook.com/mirocolegio',
+    youtube_url: 'https://www.youtube.com/user/tvcolegiomiro',
+    instagram_url: 'https://www.instagram.com/colegiomiro',
   },
 };
