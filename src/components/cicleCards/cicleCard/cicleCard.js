@@ -5,7 +5,7 @@ export function CicleCard({ SvgIcon, title, subtitle }) {
   return (
     <Container>
       <Cicle>
-        <SvgIcon width="70%" height="70%" />
+        <SvgIcon />
       </Cicle>
       <Title>{title}</Title>
       <SubTitle>{subtitle}</SubTitle>

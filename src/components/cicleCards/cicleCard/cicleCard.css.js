@@ -20,6 +20,19 @@ export const Cicle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  & svg {
+    width: 70%;
+    height: 70%;
+  }
+  ${MEDIA.PHONE`
+    width: 180px;
+    height: 180px;
+    & svg {
+      width:60%;
+      height:60%;
+    }
+  `}
 `;
 
 export const Title = styled.h4`
@@ -30,6 +43,10 @@ export const Title = styled.h4`
 
   margin-top: 10%;
   margin-bottom: 5%;
+
+  ${MEDIA.PHONE`
+    font-size: 2.5rem;
+  `}
 `;
 
 export const SubTitle = styled.h6`
@@ -42,5 +59,6 @@ export const SubTitle = styled.h6`
 
   ${MEDIA.PHONE`
     margin-bottom: 10%;
+    font-size: 2.1rem;
   `}
 `;

@@ -47,7 +47,7 @@ export function VideoCarousel() {
       <Container>
         {!isMobile && (
           <Back>
-            <TiChevronLeft size="100px" />
+            <TiChevronLeft size="100px" style={{ zIndex: 5 }} />
           </Back>
         )}
         <StyledSlider>
@@ -57,16 +57,16 @@ export function VideoCarousel() {
         </StyledSlider>
         {!isMobile && (
           <Next>
-            <TiChevronRight size="100px" />
+            <TiChevronRight size="100px" style={{ zIndex: 5 }} />
           </Next>
         )}
         {isMobile && (
           <MobileButtonContainer>
             <Back>
-              <TiChevronLeft size="100px" />
+              <TiChevronLeft size="100px" style={{ zIndex: 5 }} />
             </Back>
             <Next>
-              <TiChevronRight size="100px" />
+              <TiChevronRight size="100px" style={{ zIndex: 5 }} />
             </Next>
           </MobileButtonContainer>
         )}
