@@ -13,11 +13,14 @@ import { graphql } from 'gatsby';
 
 const Index = ({ data }) => (
   <Layout>
+    {console.log({ data })}
     <Start slides={data.homeJson.carousel} />
     <CicleCards cicles={data.homeJson.cicles} />
-    <ScheduleVisit>AGENDE UMA VISITA</ScheduleVisit>
+    <ScheduleVisit href="#contato">AGENDE UMA VISITA</ScheduleVisit>
     <VideoCarousel />
-    <ScheduleVisit>CONHEÇA O COLÉGIO</ScheduleVisit>
+    <ScheduleVisit href={data.site.siteMetadata.siteOfficial}>
+      CONHEÇA O COLÉGIO
+    </ScheduleVisit>
     <Contact />
     <VideoPed />
     <About />
@@ -28,6 +31,11 @@ export default Index;
 
 export const query = graphql`
   query HomepageQuery {
+    site {
+      siteMetadata {
+        siteOfficial
+      }
+    }
     homeJson {
       title
       content {

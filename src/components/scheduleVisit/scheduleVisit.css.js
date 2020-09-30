@@ -38,6 +38,7 @@ export const SchedulerButton = styled.a`
   font-weight: bold;
   font-size: 4.8rem;
   color: #933b60;
+  text-decoration: none;
 
   border: none;
   border-bottom: 7px solid #933b60;

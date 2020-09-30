@@ -10,10 +10,9 @@ module.exports = {
   themeColor: '#933B60',
   backgroundColor: '#fff',
   pathPrefix: null,
-  logo: path.resolve(__dirname, 'src/images/icon.png'),
+  logo: path.resolve(__dirname, 'src/images/favicons/icon.png'),
   social: {
     twitter: 'colegiomiro',
-    // fbAppId: '',
     twitter_url: 'https://twitter.com/colegiomiro',
     facebook_url: ' https://www.facebook.com/mirocolegio',
     youtube_url: 'https://www.youtube.com/user/tvcolegiomiro',

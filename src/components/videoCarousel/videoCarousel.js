@@ -17,7 +17,7 @@ import {
 import { useMediaQuery } from '../../helpers/mediaTemplates';
 
 export function YoutubeEmbed({
-  link = 'https://www.youtube-nocookie.com/embed/7dNZ0kYKq58',
+  link = 'https://www.youtube-nocookie.com/embed/-bZfEEl31l0',
 }) {
   return (
     <StyledYoutube>
@@ -40,7 +40,7 @@ export function VideoCarousel() {
     <CarouselProvider
       naturalSlideWidth={100}
       naturalSlideHeight={75}
-      totalSlides={3}
+      totalSlides={1}
       infinite
       style={{ position: 'relative', overflow: 'hidden' }}
     >
@@ -52,12 +52,6 @@ export function VideoCarousel() {
         )}
         <StyledSlider>
           <StyledSlide index={0}>
-            <YoutubeEmbed />
-          </StyledSlide>
-          <StyledSlide index={1}>
-            <YoutubeEmbed />
-          </StyledSlide>
-          <StyledSlide index={2}>
             <YoutubeEmbed />
           </StyledSlide>
         </StyledSlider>

@@ -8,7 +8,7 @@ import {
 } from './videoPed.css';
 
 export function YoutubeEmbed({
-  link = 'https://www.youtube-nocookie.com/embed/7dNZ0kYKq58',
+  link = 'https://www.youtube-nocookie.com/embed/-bZfEEl31l0',
 }) {
   return (
     <StyledYoutube>

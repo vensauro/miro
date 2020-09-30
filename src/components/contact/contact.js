@@ -30,7 +30,7 @@ function Input({ name, multiline }) {
 
 export function Contact() {
   return (
-    <Container>
+    <Container id="contato">
       <DescriptionContainer>
         <DescriptionImageContainer>
           <DescriptionImage

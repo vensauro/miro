@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import MiroSvg from 'images/marca_default.svg';
 import MEDIA from 'helpers/mediaTemplates';
@@ -20,7 +21,7 @@ export const Container = styled.header`
   `}
 `;
 
-export const MiroLogo = styled(MiroSvg)`
+const StyledMiro = styled(MiroSvg)`
   height: 6rem;
   width: 460px;
 
@@ -29,3 +30,11 @@ export const MiroLogo = styled(MiroSvg)`
     width: 170px;
   `}
 `;
+
+export function MiroLogo({ href = '#' }) {
+  return (
+    <a href={href}>
+      <StyledMiro />
+    </a>
+  );
+}

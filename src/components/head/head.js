@@ -179,24 +179,25 @@ Head.propTypes = {
   location: PropTypes.object.isRequired,
 };
 
-const HeadWithQuery = props => (
-  <StaticQuery
-    query={graphql`
-      query {
-        site {
-          siteMetadata {
-            siteTitle
-            siteTitleShort
-            siteDescription
-            siteUrl
-            themeColor
-            social {
-              twitter
-            }
-          }
+export const siteMetaDataQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        siteTitle
+        siteTitleShort
+        siteDescription
+        siteUrl
+        themeColor
+        social {
+          twitter
         }
       }
-    `}
+    }
+  }
+`;
+const HeadWithQuery = props => (
+  <StaticQuery
+    query={siteMetaDataQuery}
     render={data => (
       <Location>
         {({ location }) => (
