@@ -11,12 +11,13 @@ import {
   InputLabel,
   StyledInput,
   SubmitButton,
+  Select,
 } from './contact.css';
 import descriptionImage from 'images/bg03.png';
 
 function Input({ name, multiline }) {
   return (
-    <InputContainer>
+    <InputContainer relative>
       <StyledInput
         id={name}
         required
@@ -28,7 +29,7 @@ function Input({ name, multiline }) {
   );
 }
 
-export function Contact() {
+export function Contact({ reasons, visitText }) {
   return (
     <Container id="contato">
       <DescriptionContainer>
@@ -40,10 +41,7 @@ export function Contact() {
           <DescriptionTitle>
             AGENDE <br /> UMA VISITA
           </DescriptionTitle>
-          <DescriptionText>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
-          </DescriptionText>
+          <DescriptionText>{visitText}</DescriptionText>
         </DescriptionImageContainer>
       </DescriptionContainer>
       <FormContainer>
@@ -51,6 +49,14 @@ export function Contact() {
         <Input name="E-MAIL" type="email" />
         <Input name="TELEFONE" type="tel" />
         <Input name="SÉRIE PRETENDIDA" type="text" />
+        <InputContainer>
+          <Select
+            className="react-select-container"
+            classNamePrefix="react-select"
+            placeholder="MOTIVO"
+            options={reasons.map(e => ({ value: e, label: e }))}
+          />
+        </InputContainer>
         <Input name="MOTIVO" type="text" />
         <Input name="MENSAGEM" type="text" multiline />
         <InputContainer>

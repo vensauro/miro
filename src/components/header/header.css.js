@@ -33,7 +33,7 @@ const StyledMiro = styled(MiroSvg)`
 
 export function MiroLogo({ href = '#' }) {
   return (
-    <a href={href}>
+    <a href={href} target="_blank" rel="noopener noreferrer">
       <StyledMiro />
     </a>
   );

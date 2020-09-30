@@ -17,10 +17,17 @@ const Index = ({ data }) => (
     <CicleCards cicles={data.homeJson.cicles} />
     <ScheduleVisit href="#contato">AGENDE UMA VISITA</ScheduleVisit>
     <VideoCarousel />
-    <ScheduleVisit href={data.site.siteMetadata.siteOfficial}>
+    <ScheduleVisit
+      href={data.site.siteMetadata.siteOfficial}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       CONHEÇA O COLÉGIO
     </ScheduleVisit>
-    <Contact />
+    <Contact
+      reasons={data.homeJson.reasons}
+      visitText={data.homeJson.visitText}
+    />
     <VideoPed />
     <About siteLink={data.site.siteMetadata.siteOfficial} />
   </Layout>
@@ -36,13 +43,6 @@ export const query = graphql`
       }
     }
     homeJson {
-      title
-      content {
-        childMarkdownRemark {
-          html
-          rawMarkdownBody
-        }
-      }
       carousel {
         text
       }
@@ -50,6 +50,8 @@ export const query = graphql`
         title
         subtitle
       }
+      visitText
+      reasons
       # gallery {
       #   title
       #   copy

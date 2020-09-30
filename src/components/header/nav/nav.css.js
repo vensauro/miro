@@ -32,7 +32,7 @@ const Img = styled.img`
 
 export function SocialIcon({ link, img, alt, size }) {
   return (
-    <a href={link}>
+    <a href={link} target="_blank" rel="noopener noreferrer">
       <Img src={img} alt={alt} size={size} />
     </a>
   );

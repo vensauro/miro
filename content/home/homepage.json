@@ -1,6 +1,6 @@
 {
-  "title": "Home",
-  "content": "intro.md",
+  "boyHomeImg": "",
+  "boyHomeImgMobile": "",
   "carousel": [
     {"text": "Lorem Ipsum is simply dummy text of the printing."},
     {"text": "No entanto, não podemos esquecer que a necessidade de renovação..."},
@@ -11,5 +11,12 @@
     {"title": "Lorem Ipsum is simply", "subtitle": "Lorem Ipsum is simply dummy."},
     {"title": "Lorem Ipsum is simply", "subtitle": "Lorem Ipsum is simply dummy."},
     {"title": "Lorem Ipsum is simply", "subtitle": "Lorem Ipsum is simply dummy."}
+  ],
+  "visitText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  "reasons": [
+    "Aluno Novo",
+    "Renovação de Matrícula",
+    "Dúvidas sobre o Colégio",
+    "Dúvidas sobre a Prática Pedagógica"
   ]
 }

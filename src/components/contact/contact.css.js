@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import RSelect from 'react-select';
 import MEDIA from 'helpers/mediaTemplates';
 
 export const Container = styled.section`
@@ -101,8 +102,12 @@ export const FormContainer = styled.form`
 `;
 
 export const InputContainer = styled.div`
-  position: relative;
-  overflow: hidden;
+  ${p =>
+    p.relative &&
+    css`
+      position: relative;
+      overflow: hidden;
+    `}
 
   display: flex;
   align-items: center;
@@ -178,4 +183,43 @@ export const SubmitButton = styled.input.attrs({ type: 'submit' })`
   background: transparent;
   width: 600px;
   border: none;
+`;
+
+export const Select = styled(RSelect)`
+  width: 600px;
+
+  & .react-select__indicator-separator {
+    display: none;
+  }
+  & .react-select__indicator svg {
+    height: 35px;
+    width: 35px;
+    color: white;
+  }
+
+  & .react-select__control {
+    width: 600px;
+
+    background: #933b60;
+
+    border: none;
+    border-radius: 10px;
+  }
+
+  & .react-select__value-container {
+    padding: 15px 16px;
+  }
+
+  & .react-select__placeholder {
+    margin-left: 3%;
+    color: white;
+    font-family: 'Titillium Web';
+    font-size: 3rem;
+  }
+
+  & .react-select__menu {
+    background: #fbbf51;
+    color: #933b60;
+    font-weight: bold;
+  }
 `;
