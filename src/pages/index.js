@@ -15,7 +15,15 @@ const Index = ({ data }) => (
   <Layout siteLink={data.site.siteMetadata.siteOfficial}>
     <Start slides={data.homeJson.carousel} />
     <CicleCards cicles={data.homeJson.cicles} />
-    <ScheduleVisit href="#contato">AGENDE UMA VISITA</ScheduleVisit>
+    <ScheduleVisit
+      onClick={() => {
+        const selector = '#contato';
+
+        document.querySelector(selector).scrollIntoView();
+      }}
+    >
+      AGENDE UMA VISITA
+    </ScheduleVisit>
     <VideoCarousel />
     <ScheduleVisit
       href={data.site.siteMetadata.siteOfficial}

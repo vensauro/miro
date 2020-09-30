@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import posed from 'react-pose';
 import { Container, MiroLogo } from './header.css';
 import Nav from 'components/header/nav';

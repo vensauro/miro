@@ -14,8 +14,10 @@ import {
   Select,
 } from './contact.css';
 import descriptionImage from 'images/bg03.png';
+import NumberFormat from 'react-number-format';
+import { formatToPhone } from 'brazilian-values';
 
-function Input({ name, multiline }) {
+function Input({ name, multiline, ...rest }) {
   return (
     <InputContainer relative>
       <StyledInput
@@ -23,6 +25,7 @@ function Input({ name, multiline }) {
         required
         multiline={multiline}
         as={multiline ? 'textarea' : 'input'}
+        {...rest}
       />
       <InputLabel htmlFor={name}>{name}</InputLabel>
     </InputContainer>
@@ -31,7 +34,7 @@ function Input({ name, multiline }) {
 
 export function Contact({ reasons, visitText }) {
   return (
-    <Container id="contato" data-netlify="true">
+    <Container id="contato" data-netlify="true" method="POST">
       <DescriptionContainer>
         <DescriptionImageContainer>
           <DescriptionImage
@@ -47,7 +50,13 @@ export function Contact({ reasons, visitText }) {
       <FormContainer>
         <Input name="NOME" />
         <Input name="E-MAIL" type="email" />
-        <Input name="TELEFONE" type="tel" />
+        <NumberFormat
+          customInput={Input}
+          format={e => formatToPhone(e.slice(0, 11))}
+          name="TELEFONE"
+          type="tel"
+        />
+
         <Input name="SÉRIE PRETENDIDA" type="text" />
         <InputContainer>
           <Select
