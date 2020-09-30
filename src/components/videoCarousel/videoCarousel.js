@@ -1,5 +1,5 @@
 import React from 'react';
-import { CarouselProvider, Slide } from 'pure-react-carousel';
+import { CarouselProvider } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 import { TiChevronLeft, TiChevronRight } from 'react-icons/ti';
@@ -11,6 +11,8 @@ import {
   StyledSlider,
   StyledYoutube,
   StyledSlide,
+  MobileButtonContainer,
+  PlayIcon,
 } from './videoCarousel.css';
 import { useMediaQuery } from '../../helpers/mediaTemplates';
 
@@ -40,6 +42,7 @@ export function VideoCarousel() {
       naturalSlideHeight={75}
       totalSlides={3}
       infinite
+      style={{ position: 'relative', overflow: 'hidden' }}
     >
       <Container>
         {!isMobile && (
@@ -58,14 +61,22 @@ export function VideoCarousel() {
             <YoutubeEmbed />
           </StyledSlide>
         </StyledSlider>
-        {isMobile && (
-          <Back>
-            <TiChevronLeft size="100px" />
-          </Back>
+        {!isMobile && (
+          <Next>
+            <TiChevronRight size="100px" />
+          </Next>
         )}
-        <Next>
-          <TiChevronRight size="100px" />
-        </Next>
+        {isMobile && (
+          <MobileButtonContainer>
+            <Back>
+              <TiChevronLeft size="100px" />
+            </Back>
+            <Next>
+              <TiChevronRight size="100px" />
+            </Next>
+          </MobileButtonContainer>
+        )}
+        <PlayIcon />
       </Container>
     </CarouselProvider>
   );

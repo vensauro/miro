@@ -1,5 +1,11 @@
 import React from 'react';
-import { Title, StyledYoutube, Container, ScreenLimiter } from './videoPed.css';
+import {
+  Title,
+  StyledYoutube,
+  Container,
+  ScreenLimiter,
+  PlayIcon,
+} from './videoPed.css';
 
 export function YoutubeEmbed({
   link = 'https://www.youtube-nocookie.com/embed/7dNZ0kYKq58',
@@ -28,6 +34,7 @@ export function VideoPed() {
         </Title>
         <YoutubeEmbed />
       </ScreenLimiter>
+      <PlayIcon />
     </Container>
   );
 }
