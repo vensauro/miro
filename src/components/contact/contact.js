@@ -53,7 +53,9 @@ export function Contact() {
         <Input name="SÉRIE PRETENDIDA" type="text" />
         <Input name="MOTIVO" type="text" />
         <Input name="MENSAGEM" type="text" multiline />
-        <SubmitButton value="ENVIAR" />
+        <InputContainer>
+          <SubmitButton value="ENVIAR" />
+        </InputContainer>
       </FormContainer>
     </Container>
   );

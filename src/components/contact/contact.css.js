@@ -173,14 +173,9 @@ export const SubmitButton = styled.input.attrs({ type: 'submit' })`
   color: #933b60;
   font-size: 4rem;
   font-weight: bold;
+  text-align: end;
+
   background: transparent;
+  width: 600px;
   border: none;
-
-  width: 90%;
-  align-self: flex-end;
-
-  ${MEDIA.PHONE`
-    width: unset;
-    margin-right: 15px;
-  `}
 `;
