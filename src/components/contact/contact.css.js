@@ -210,7 +210,8 @@ export const Select = styled(RSelect)`
     padding: 15px 16px;
   }
 
-  & .react-select__placeholder {
+  & .react-select__placeholder,
+  & .react-select__single-value {
     margin-left: 3%;
     color: white;
     font-family: 'Titillium Web';
