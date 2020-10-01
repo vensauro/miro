@@ -18,6 +18,13 @@ exports.handler = async (event, context) => {
     apiKey: MAILGUN_API_KEY,
     domain: MAILGUN_DOMAIN,
   });
+  console.log({
+    params,
+    MAILGUN_DOMAIN,
+    MAILGUN_API_KEY,
+    MAILGUN_FROM,
+    EMAIL_MIRO,
+  });
   try {
     await mg.messages().send({
       from: MAILGUN_FROM,
