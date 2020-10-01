@@ -13,7 +13,7 @@ exports.handler = async (event, context) => {
   }
 
   const params = querystring.parse(event.body);
-  console.log(params);
+  console.log(params, JSON.parse(params));
 
   const mg = mailgun({
     apiKey: MAILGUN_API_KEY,
