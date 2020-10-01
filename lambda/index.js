@@ -39,7 +39,7 @@ exports.handler = async (event, context) => {
       subject: 'Confirmação de mensagem ao Colégio Miró',
       html: `
   Olá ${params.nome}, confirmamos que sua mensagem foi enviada para o Colégio Miró. <br/>
-  Agradecemos a paciência.
+  Agradecemos seu contato.
       `,
     });
   } catch (error) {

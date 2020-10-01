@@ -18,8 +18,8 @@ const Index = ({ data }) => (
     <ScheduleVisit
       onClick={() => {
         const selector = '#contato';
-
         document.querySelector(selector).scrollIntoView();
+        setTimeout(() => (window.location.hash = selector), 3000)
       }}
     >
       AGENDE UMA VISITA
@@ -60,17 +60,6 @@ export const query = graphql`
       }
       visitText
       reasons
-      # gallery {
-      #   title
-      #   copy
-      #   image {
-      #     childImageSharp {
-      #       fluid(maxHeight: 500, quality: 90) {
-      #         ...GatsbyImageSharpFluid_withWebp
-      #       }
-      #     }
-      #   }
-      # }
     }
   }
 `;
