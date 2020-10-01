@@ -22,7 +22,7 @@ export const Container = styled.header`
 `;
 
 export const GirlImg = styled.img.attrs({ loading: 'lazy' })`
-  margin-right: 25%;
+  margin-right: 21%;
   height: 90%;
 
   ${MEDIA.PHONE`
