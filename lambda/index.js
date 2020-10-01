@@ -12,13 +12,13 @@ exports.handler = async (event, context) => {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
-  const { params } = querystring.parse(event.body);
+  const params = querystring.parse(event.body);
+  console.log(params);
 
   const mg = mailgun({
     apiKey: MAILGUN_API_KEY,
     domain: MAILGUN_DOMAIN,
   });
-  console.log(params);
   try {
     await mg.messages().send({
       from: MAILGUN_FROM,
