@@ -121,3 +121,12 @@ export const Letering = styled(LeteringSvg)`
   width: 100%;
   z-index: 3;
 `;
+
+export const LeteringContainer = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+`;

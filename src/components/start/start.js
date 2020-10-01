@@ -8,6 +8,7 @@ import {
   GirlImg,
   WhiteBg,
   LeteringRightText,
+  LeteringContainer,
 } from './start.css';
 
 import GirlImgScr from 'images/img_estudante_2.png';
@@ -24,19 +25,10 @@ export function Start() {
         escola comum.
       </WhiteBg>
       {isDesktop && (
-        <div
-          style={{
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-end',
-          }}
-        >
+        <LeteringContainer>
           <Letering />
           <div style={{ height: '28vh' }} />
-        </div>
+        </LeteringContainer>
       )}
       <YellowBg>
         {isDesktop ? (
