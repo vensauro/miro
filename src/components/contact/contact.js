@@ -53,10 +53,16 @@ export function Contact({ reasons, visitText }) {
 
   async function submit(e) {
     e.preventDefault();
-    const raw = await fetch(`${window.location}.netlify/functions/lambda`, {
-      method: 'POST',
-      body: JSON.stringify(formValues),
-    });
+    const raw = await fetch(
+      `${window.location}.netlify/functions/lambda/index`,
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          ...formValues,
+          motivo: formValues.motivo.value,
+        }),
+      }
+    );
     if (raw.status === 200) toast.success('Mensagem enviada!');
     else toast.error('Problema ao enviar mensagem');
   }
@@ -109,7 +115,7 @@ export function Contact({ reasons, visitText }) {
             placeholder="MOTIVO"
             options={reasons.map(e => ({ value: e, label: e }))}
             value={formValues.motivo}
-            onChange={changeValue('motivo', ({ value }) => value)}
+            onChange={changeValue('motivo', value => value)}
           />
         </InputContainer>
         <Input
