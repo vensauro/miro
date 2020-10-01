@@ -23,7 +23,7 @@ export const Container = styled.header`
 
 `;
 
-export const GirlImg = styled.img.attrs({ loading: 'lazy' })`
+export const GirlImg = styled.img`
   margin-right: 21%;
   height: 90%;
 
