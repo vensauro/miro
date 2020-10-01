@@ -41,6 +41,8 @@ export const textsStyles = css`
 
   font-weight: bold;
 
+  overflow: hidden;
+
   @media (min-width: 1801px) {
     font-size: 5rem;
   }
