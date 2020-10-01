@@ -36,19 +36,19 @@ Agradecemos a paciência.
     `,
     });
 
-    await mg.messages().send({
-      from: MAILGUN_FROM,
-      to: EMAIL_MIRO,
-      subject: 'Email do site matricula2021.colegiomiro.com.br',
-      html: `
-<h1> Mensagem de ${params.nome} </h1>
-<p> email: ${params.email} </p>
-<p> telefone: ${params.telefone} </p>
-<p> série pretendida: ${params.serie} </p>
-<p> motivo: ${params.motivo} </p>
-<p> mensagem: ${params.mensagem} </p>
-    `,
-    });
+    //     await mg.messages().send({
+    //       from: MAILGUN_FROM,
+    //       to: EMAIL_MIRO,
+    //       subject: 'Email do site matricula2021.colegiomiro.com.br',
+    //       html: `
+    // <h1> Mensagem de ${params.nome} </h1>
+    // <p> email: ${params.email} </p>
+    // <p> telefone: ${params.telefone} </p>
+    // <p> série pretendida: ${params.serie} </p>
+    // <p> motivo: ${params.motivo} </p>
+    // <p> mensagem: ${params.mensagem} </p>
+    //     `,
+    //     });
   } catch (error) {
     console.error(error);
     return {
