@@ -1,11 +1,11 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { MiroLogo } from '../header/header.css';
 import Nav from '../header/nav/nav';
 import { AboutText, Container } from './about.css';
-import { useMediaQuery } from '../../helpers/mediaTemplates';
 
 export function About({ siteLink }) {
-  const isMobile = useMediaQuery('(max-width: 480px)');
+  const isMobile = useMediaQuery({ maxWidth: 480 });
   return (
     <Container>
       <MiroLogo href={siteLink} />

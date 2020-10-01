@@ -11,10 +11,11 @@ import {
 } from './start.css';
 
 import GirlImgScr from 'images/img_estudante_2.png';
-import { useMediaQuery } from 'helpers/mediaTemplates';
+import { useMediaQuery } from 'react-responsive';
 
 export function Start() {
-  const isDesktop = useMediaQuery('(min-width: 480px)');
+  const isMobile = useMediaQuery({ maxWidth: 480 });
+  const isDesktop = !isMobile;
 
   return (
     <Container>
