@@ -14,7 +14,7 @@ export const Container = styled.header`
   top: 0;
   z-index: 3;
 
-  width: 96%;
+  width: 90%;
 
   ${MEDIA.PHONE`
     padding: 0.3rem;

@@ -15,6 +15,8 @@ export const Container = styled.header`
   align-items: flex-end;
   justify-content: flex-end;
 
+  overflow: hidden;
+
   /* ${MEDIA.PHONE`
     height: 70vh;
   `} */
@@ -40,8 +42,6 @@ export const textsStyles = css`
   align-items: flex-end;
 
   font-weight: bold;
-
-  overflow: hidden;
 
   @media (min-width: 1801px) {
     font-size: 5rem;
