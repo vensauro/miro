@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Container,
   DescriptionContainer,
@@ -16,6 +16,8 @@ import {
 import descriptionImage from 'images/bg03.png';
 import NumberFormat from 'react-number-format';
 import { formatToPhone } from 'brazilian-values';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 function Input({ name, multiline, ...rest }) {
   return (
@@ -33,8 +35,34 @@ function Input({ name, multiline, ...rest }) {
 }
 
 export function Contact({ reasons, visitText }) {
+  const [formValues, setFormValues] = useState({
+    nome: '',
+    email: '',
+    telefone: '',
+    serie: '',
+    motivo: null,
+    mensagem: '',
+  });
+
+  function changeValue(name, getFn = e => e.target.value) {
+    return event => {
+      event.persist && event.persist();
+      setFormValues(old => ({ ...old, [name]: getFn(event) }));
+    };
+  }
+
+  async function submit(e) {
+    e.preventDefault();
+    const raw = await fetch(`${window.location}.netlify/functions/lambda`, {
+      method: 'POST',
+      body: JSON.stringify(formValues),
+    });
+    if (raw.status === 200) toast.success('Mensagem enviada!');
+    else toast.error('Problema ao enviar mensagem');
+  }
   return (
-    <Container id="contato" data-netlify="true" method="POST">
+    <Container id="contato" onSubmit={submit}>
+      <ToastContainer />
       <DescriptionContainer>
         <DescriptionImageContainer>
           <DescriptionImage
@@ -48,25 +76,49 @@ export function Contact({ reasons, visitText }) {
         </DescriptionImageContainer>
       </DescriptionContainer>
       <FormContainer>
-        <Input name="NOME" />
-        <Input name="E-MAIL" type="email" />
+        <Input
+          name="NOME"
+          value={formValues.nome}
+          onChange={changeValue('nome')}
+        />
+        <Input
+          name="E-MAIL"
+          type="email"
+          value={formValues.email}
+          onChange={changeValue('email')}
+        />
         <NumberFormat
           customInput={Input}
           format={e => formatToPhone(e.slice(0, 11))}
           name="TELEFONE"
           type="tel"
+          value={formValues.telefone}
+          onValueChange={changeValue('telefone', value => value.formattedValue)}
         />
 
-        <Input name="SÉRIE PRETENDIDA" type="text" />
+        <Input
+          name="SÉRIE PRETENDIDA"
+          type="text"
+          value={formValues.serie}
+          onChange={changeValue('serie')}
+        />
         <InputContainer>
           <Select
             className="react-select-container"
             classNamePrefix="react-select"
             placeholder="MOTIVO"
             options={reasons.map(e => ({ value: e, label: e }))}
+            value={formValues.motivo}
+            onChange={changeValue('motivo', ({ value }) => value)}
           />
         </InputContainer>
-        <Input name="MENSAGEM" type="text" multiline />
+        <Input
+          name="MENSAGEM"
+          type="text"
+          multiline
+          value={formValues.mensagem}
+          onChange={changeValue('mensagem')}
+        />
         <InputContainer>
           <SubmitButton value="ENVIAR" />
         </InputContainer>
