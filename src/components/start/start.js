@@ -20,16 +20,16 @@ export function Start() {
 
   return (
     <Container>
+
       <WhiteBg>
         O Miró não é uma <br />
         escola comum.
       </WhiteBg>
-      {isDesktop && (
-        <LeteringContainer>
-          <Letering />
-          <div style={{ height: '28vh' }} />
-        </LeteringContainer>
-      )}
+
+      <GirlImg
+        src={GirlImgScr}
+        alt="garota com mascara fazendo simbolo da lady gaga"
+      />
       <YellowBg>
         {isDesktop ? (
           <TextureLeft />
@@ -39,10 +39,6 @@ export function Start() {
           </>
         )}
       </YellowBg>
-      <GirlImg
-        src={GirlImgScr}
-        alt="garota com mascara fazendo simbolo da lady gaga"
-      />
       {isDesktop && (
         <>
           <LeteringRightText>
@@ -52,6 +48,12 @@ export function Start() {
             <TextureRight />
           </YellowBg>
         </>
+      )}
+      {isDesktop && (
+        <LeteringContainer>
+          <Letering />
+          <div style={{ height: '28vh' }} />
+        </LeteringContainer>
       )}
     </Container>
   );
