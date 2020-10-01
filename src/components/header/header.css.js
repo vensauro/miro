@@ -1,11 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import MiroSvg from 'images/marca_default.svg';
 import MEDIA from 'helpers/mediaTemplates';
 
 export const Container = styled.header`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 3rem;
 
@@ -28,13 +28,20 @@ const StyledMiro = styled(MiroSvg)`
   ${MEDIA.PHONE`
     height: 3.6rem;
     width: 170px;
+
+    ${p =>
+      p.secondary &&
+      css`
+        height: 3rem;
+        width: 200px;
+      `}
   `}
 `;
 
-export function MiroLogo({ href = '#' }) {
+export function MiroLogo({ href = '#', secondary }) {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer">
-      <StyledMiro />
+      <StyledMiro secondary={secondary} />
     </a>
   );
 }

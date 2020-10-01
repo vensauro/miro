@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import MEDIA from 'helpers/mediaTemplates';
 
 export const Container = styled.nav`
@@ -25,15 +25,21 @@ export const Container = styled.nav`
 const Img = styled.img`
   height: ${p => (p.size ? `${p.size}rem` : '7rem')};
 
+  ${p =>
+    p.secondary &&
+    css`
+      filter: brightness(130%);
+    `}
+
   ${MEDIA.PHONE`
     height: 3.6rem;
   `}
 `;
 
-export function SocialIcon({ link, img, alt, size }) {
+export function SocialIcon({ link, img, alt, size, secondary }) {
   return (
     <a href={link} target="_blank" rel="noopener noreferrer">
-      <Img src={img} alt={alt} size={size} />
+      <Img {...{ src: img, alt, size, secondary }} />
     </a>
   );
 }

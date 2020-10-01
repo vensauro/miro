@@ -4,6 +4,10 @@ import FacebookIcon from 'images/icon_fb.png';
 import TwitterIcon from 'images/icon_tt.png';
 import YoutubeIcon from 'images/icon_yt.png';
 import InstagramIcon from 'images/icon_ig.png';
+import FacebookIconCyan from 'images/icon_fb_cyan.png';
+import TwitterIconCyan from 'images/icon_tt_cyan.png';
+import YoutubeIconCyan from 'images/icon_yt_cyan.png';
+import InstagramIconCyan from 'images/icon_ig_cyan.png';
 import { graphql, useStaticQuery } from 'gatsby';
 
 const query = graphql`
@@ -21,7 +25,7 @@ const query = graphql`
   }
 `;
 
-const Nav = ({ size }) => {
+const Nav = ({ size, secondary }) => {
   const data = useStaticQuery(query);
   const {
     twitter_url,
@@ -35,33 +39,37 @@ const Nav = ({ size }) => {
         <li>
           <SocialIcon
             link={facebook_url}
-            img={FacebookIcon}
+            img={secondary ? FacebookIconCyan : FacebookIcon}
             alt="facebook"
             size={size}
+            secondary={secondary}
           />
         </li>
         <li>
           <SocialIcon
             link={twitter_url}
-            img={TwitterIcon}
+            img={secondary ? TwitterIconCyan : TwitterIcon}
             alt="twitter"
             size={size}
+            secondary={secondary}
           />
         </li>
         <li>
           <SocialIcon
             link={youtube_url}
-            img={YoutubeIcon}
+            img={secondary ? YoutubeIconCyan : YoutubeIcon}
             alt="youtube"
             size={size}
+            secondary={secondary}
           />
         </li>
         <li>
           <SocialIcon
             link={instagram_url}
-            img={InstagramIcon}
+            img={secondary ? InstagramIconCyan : InstagramIcon}
             alt="instagram"
             size={size}
+            secondary={secondary}
           />
         </li>
       </ul>

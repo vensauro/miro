@@ -53,13 +53,16 @@ export function Contact({ reasons, visitText }) {
 
   async function submit(e) {
     e.preventDefault();
-    const result = await fetch(`${window.location.origin}/.netlify/functions/index`, {
-      method: 'POST',
-      body: JSON.stringify({
-        ...formValues,
-        motivo: formValues.motivo.value,
-      }),
-    });
+    const result = await fetch(
+      `${window.location.origin}/.netlify/functions/index`,
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          ...formValues,
+          motivo: formValues.motivo.value,
+        }),
+      }
+    );
     if (result.status === 200) toast.success('Mensagem enviada!');
     else toast.error('Problema ao enviar mensagem');
   }

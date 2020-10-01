@@ -2,19 +2,13 @@ import React from 'react';
 import { CarouselProvider } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
-import { TiChevronLeft, TiChevronRight } from 'react-icons/ti';
-
 import {
   Container,
-  Back,
-  Next,
   StyledSlider,
   StyledYoutube,
   StyledSlide,
-  MobileButtonContainer,
   PlayIcon,
 } from './videoCarousel.css';
-import { useMediaQuery } from '../../helpers/mediaTemplates';
 
 export function YoutubeEmbed({
   link = 'https://www.youtube-nocookie.com/embed/-bZfEEl31l0',
@@ -35,7 +29,6 @@ export function YoutubeEmbed({
 }
 
 export function VideoCarousel() {
-  const isMobile = useMediaQuery('(max-width: 480px)');
   return (
     <CarouselProvider
       naturalSlideWidth={100}
@@ -45,31 +38,11 @@ export function VideoCarousel() {
       style={{ position: 'relative', overflow: 'hidden' }}
     >
       <Container>
-        {!isMobile && (
-          <Back>
-            <TiChevronLeft size="100px" style={{ zIndex: 5 }} />
-          </Back>
-        )}
         <StyledSlider>
           <StyledSlide index={0}>
             <YoutubeEmbed />
           </StyledSlide>
         </StyledSlider>
-        {!isMobile && (
-          <Next>
-            <TiChevronRight size="100px" style={{ zIndex: 5 }} />
-          </Next>
-        )}
-        {isMobile && (
-          <MobileButtonContainer>
-            <Back>
-              <TiChevronLeft size="100px" style={{ zIndex: 5 }} />
-            </Back>
-            <Next>
-              <TiChevronRight size="100px" style={{ zIndex: 5 }} />
-            </Next>
-          </MobileButtonContainer>
-        )}
         <PlayIcon />
       </Container>
     </CarouselProvider>

@@ -1,23 +1,65 @@
 import React from 'react';
-import { Container } from './start.css';
+import {
+  Container,
+  YellowBg,
+  Letering,
+  TextureLeft,
+  TextureRight,
+  GirlImg,
+  WhiteBg,
+  LeteringRightText,
+} from './start.css';
 
-import { StartCarousel } from './carousel/carousel';
-import { StudentImg } from './studentImg/studentImg';
-import { CarouselProvider } from 'pure-react-carousel';
+import GirlImgScr from 'images/img_estudante_2.png';
+import { useMediaQuery } from 'helpers/mediaTemplates';
 
-export function Start({ slides }) {
+export function Start() {
+  const isDesktop = useMediaQuery('(min-width: 480px)');
+
   return (
-    <CarouselProvider
-      naturalSlideWidth={410}
-      naturalSlideHeight={210}
-      isPlaying
-      infinite
-      totalSlides={slides.length}
-    >
-      <Container>
-        <StudentImg />
-        <StartCarousel slides={slides} />
-      </Container>
-    </CarouselProvider>
+    <Container>
+      <WhiteBg>
+        O Miró não é uma <br />
+        escola comum.
+      </WhiteBg>
+      {isDesktop && (
+        <div
+          style={{
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-end',
+          }}
+        >
+          <Letering />
+          <div style={{ height: '28vh' }} />
+        </div>
+      )}
+      <YellowBg>
+        {isDesktop ? (
+          <TextureLeft />
+        ) : (
+          <>
+            Porque os <br /> comuns não <br /> mudam o <br /> mundo.
+          </>
+        )}
+      </YellowBg>
+      <GirlImg
+        src={GirlImgScr}
+        alt="garota com mascara fazendo simbolo da lady gaga"
+      />
+      {isDesktop && (
+        <>
+          <LeteringRightText>
+            Porque os <br /> comuns não <br /> mudam o <br /> mundo.
+          </LeteringRightText>
+          <YellowBg right>
+            <TextureRight />
+          </YellowBg>
+        </>
+      )}
+    </Container>
   );
 }

@@ -19,7 +19,7 @@ const Index = ({ data }) => (
       onClick={() => {
         const selector = '#contato';
         document.querySelector(selector).scrollIntoView();
-        setTimeout(() => (window.location.hash = selector), 3000)
+        setTimeout(() => (window.location.hash = selector), 3000);
       }}
     >
       AGENDE UMA VISITA

@@ -2,6 +2,7 @@ import React from 'react';
 import posed from 'react-pose';
 import { Container, MiroLogo } from './header.css';
 import Nav from 'components/header/nav';
+import { useMediaQuery } from 'helpers/mediaTemplates';
 
 // Example of a component-specific page transition
 const AnimatedContainer = posed.div({
@@ -20,12 +21,13 @@ const AnimatedContainer = posed.div({
 });
 
 const Header = ({ siteLink }) => {
+  const isMobile = useMediaQuery('(max-width: 480px)');
   return (
     <AnimatedContainer style={{ position: 'relative' }}>
       <Container>
-        <MiroLogo href={siteLink} />
+        {isMobile && <MiroLogo secondary href={siteLink} />}
 
-        <Nav size={5} />
+        <Nav size={5} secondary />
       </Container>
     </AnimatedContainer>
   );
