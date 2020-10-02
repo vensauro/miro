@@ -155,7 +155,28 @@ export const LeteringBottom = styled.div`
 
 export const DotContainer = styled.div`
   position: absolute;
-  width: 10%;
-  height: 100px;
-  background: palegreen;
+
+  height: 60px;
+  /* background: palegreen; */
+
+  right: 40%;
+
+  display: flex;
+
+  ${MEDIA.PHONE`
+    display: none;
+  `}
+`;
+
+export const Dot = styled.div`
+  background: ${p => (p.selected ? '#fbbf51' : '#7b3050')};
+  border: none;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  margin: 0 12px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;

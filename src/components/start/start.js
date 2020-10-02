@@ -11,6 +11,7 @@ import {
   LeteringContainer,
   LeteringBottom,
   DotContainer,
+  Dot,
 } from './start.css';
 
 export function Start({ banners }) {
@@ -63,7 +64,15 @@ export function Start({ banners }) {
         <LeteringBottom />
       </LeteringContainer>
 
-      {/* <DotContainer></DotContainer> */}
+      <DotContainer>
+        {banners.map((e, i) => (
+          <Dot
+            key={i}
+            onClick={() => setActiveSlide(i)}
+            selected={i === activeSlide}
+          />
+        ))}
+      </DotContainer>
     </Container>
   );
 }
