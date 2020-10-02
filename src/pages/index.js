@@ -13,7 +13,7 @@ import { graphql } from 'gatsby';
 
 const Index = ({ data }) => (
   <Layout siteLink={data.site.siteMetadata.siteOfficial}>
-    <Start slides={data.homeJson.carousel} />
+    <Start banners={data.homeJson.banners} />
     <CicleCards cicles={data.homeJson.cicles} />
     <ScheduleVisit
       onClick={() => {
@@ -51,15 +51,27 @@ export const query = graphql`
       }
     }
     homeJson {
-      carousel {
-        text
-      }
       cicles {
         title
         subtitle
       }
       visitText
       reasons
+      banners {
+        rightText
+        leftText
+        background
+        image {
+          alt
+          src {
+            childImageSharp {
+              fixed(width: 420) {
+                ...GatsbyImageSharpFixed_withWebp
+              }
+            }
+          }
+        }
+      }
     }
   }
 `;

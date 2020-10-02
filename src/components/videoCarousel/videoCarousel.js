@@ -9,6 +9,7 @@ import {
   StyledSlide,
   PlayIcon,
 } from './videoCarousel.css';
+import IO from 'components/io';
 
 export function YoutubeEmbed({
   link = 'https://www.youtube-nocookie.com/embed/-bZfEEl31l0',
@@ -30,21 +31,25 @@ export function YoutubeEmbed({
 
 export function VideoCarousel() {
   return (
-    <CarouselProvider
-      naturalSlideWidth={100}
-      naturalSlideHeight={75}
-      totalSlides={1}
-      infinite
-      style={{ position: 'relative', overflow: 'hidden' }}
-    >
-      <Container>
-        <StyledSlider>
-          <StyledSlide index={0}>
-            <YoutubeEmbed />
-          </StyledSlide>
-        </StyledSlider>
-        <PlayIcon />
-      </Container>
-    </CarouselProvider>
+    <IO rootMargin="-100px">
+      {({ hasBeenVisible }) => (
+        <CarouselProvider
+          naturalSlideWidth={100}
+          naturalSlideHeight={75}
+          totalSlides={1}
+          infinite
+          style={{ position: 'relative', overflow: 'hidden' }}
+        >
+          <Container>
+            <StyledSlider>
+              <StyledSlide index={0}>
+                {hasBeenVisible && <YoutubeEmbed />}
+              </StyledSlide>
+            </StyledSlider>
+            <PlayIcon />
+          </Container>
+        </CarouselProvider>
+      )}
+    </IO>
   );
 }

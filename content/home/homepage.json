@@ -1,16 +1,62 @@
 {
-  "boyHomeImg": "",
-  "boyHomeImgMobile": "",
-  "carousel": [
-    {"text": "Lorem Ipsum is simply dummy text of the printing."},
-    {"text": "No entanto, não podemos esquecer que a necessidade de renovação..."},
-    {"text": "Lorem Ipsum is simply dummy text of the printing."},
-    {"text": "Lorem Ipsum is simply dummy text of the printing."}
+  "banners": [
+    {
+      "rightText": "O Miró não é uma escola comum.",
+      "leftText": "Porque os comuns não mudam o mundo.",
+      "image": {
+        "src": "../images/img_banner_01.png",
+        "alt": "Garota com máscara fazendo simbolo do lady gaga"
+      },
+      "background": "#72dbd5"
+    },
+    {
+      "rightText": "Seguimos todos os protocolos de segurança.",
+      "leftText": "E com a supervisão do Instituto de Certificação IBES.",
+      "image": {
+        "src": "../images/img_banner_02.png",
+        "alt": "Criança com máscara e com sueter preto"
+      },
+      "background": "#ffffff"
+    },
+    {
+      "rightText": "O jeito Miró de ensinar.",
+      "image": {
+        "src": "../images/img_banner_03.png",
+        "alt": "Criança pequena com máscara"
+      },
+      "background": "#ffffff"
+    },
+    {
+      "rightText": "Uma jornada de conquistas, desafios e aprendizados.",
+      "leftText": "Em busca do saber e crescimento pessoal.",
+      "image": {
+        "src": "../images/img_banner_04.png",
+        "alt": "Criança pequena com máscara"
+      },
+      "background": "#cadcdd"
+    },
+    {
+      "rightText": "À distância, mas sempre juntos.",
+      "image": {
+        "src": "../images/img_banner_05.png",
+        "alt": "Garotinho com máscara de gás"
+      },
+      "background": "#e86b2d"
+    }
   ],
   "cicles": [
-    {"title": "O JEITO MIRÓ DE ENSINAR", "subtitle": "Há 24 anos, o Miró prepara uma geração para o futuro através de uma educação de qualidade."},
-    {"title": "À DISTÂNCIA, MAS SEMPRE JUNTOS", "subtitle": "Experimentamos uma nova forma de aprender e ensinar através dos nossos encontros virtuais."},
-    {"title": "MIRÓ, UMA ESCOLA CERTIFICADA", "subtitle": "Criamos um protocolo de segurança sob supervisão do IBES, um dos responsáveis no Brasil pela certificação covid free."}
+    {
+      "title": "O JEITO MIRÓ DE ENSINAR",
+      "subtitle": "Há 24 anos, o Miró prepara uma geração para o futuro através de uma educação de qualidade."
+    },
+    {
+      "title": "À DISTÂNCIA, MAS SEMPRE JUNTOS",
+      "subtitle": "Experimentamos uma nova forma de aprender e ensinar através dos nossos encontros virtuais."
+    },
+    {
+      "title": "MIRÓ, UMA ESCOLA CERTIFICADA",
+      "subtitle": "Criamos um protocolo de segurança sob supervisão do IBES, um dos responsáveis no Brasil pela certificação covid free."
+    }
   ],
   "visitText": "Venha conhecer o Miró. Feito para quem quer mudar o mundo.",
   "reasons": [

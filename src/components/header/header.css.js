@@ -1,20 +1,19 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import MiroSvg from 'images/marca_default.svg';
-import MiroImg from 'images/marca_Miro_vinho.png';
 import MEDIA from 'helpers/mediaTemplates';
 
 export const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem;
+  padding: 15px;
 
   position: absolute;
   top: 0;
   z-index: 3;
 
-  width: 90%;
+  width: 100%;
 
   ${MEDIA.PHONE`
     padding: 0.3rem;
@@ -32,7 +31,11 @@ const StyledMiro = styled(MiroSvg)`
   `}
 `;
 
-const StyledMiroImg = styled.img`
+const StyledMiroNav = styled(MiroSvg)`
+  & .b {
+    color: #aa3861;
+    fill: #aa3861;
+  }
   width: 300px;
   ${MEDIA.PHONE`
     width: 130px;
@@ -50,7 +53,7 @@ export function MiroLogo({ href = '#' }) {
 export function NavMiroLogo({ href = '#' }) {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer">
-      <StyledMiroImg src={MiroImg} loading="lazy" />
+      <StyledMiroNav />
     </a>
   );
 }

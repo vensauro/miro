@@ -35,13 +35,13 @@ function Input({ name, multiline, ...rest }) {
 }
 
 const initialValues = {
-    nome: '',
-    email: '',
-    telefone: '',
-    serie: '',
-    motivo: null,
-    mensagem: '',
-  }
+  nome: '',
+  email: '',
+  telefone: '',
+  serie: '',
+  motivo: null,
+  mensagem: '',
+};
 export function Contact({ reasons, visitText }) {
   const [formValues, setFormValues] = useState(initialValues);
 
@@ -65,7 +65,7 @@ export function Contact({ reasons, visitText }) {
       }
     );
 
-    setFormValues(initialValues)
+    setFormValues(initialValues);
     if (result.status === 200) toast.success('Mensagem enviada!');
     else toast.error('Problema ao enviar mensagem');
   }

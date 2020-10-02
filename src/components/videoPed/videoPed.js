@@ -6,6 +6,7 @@ import {
   ScreenLimiter,
   PlayIcon,
 } from './videoPed.css';
+import IO from 'components/io';
 
 export function YoutubeEmbed({
   link = 'https://www.youtube-nocookie.com/embed/-bZfEEl31l0',
@@ -27,14 +28,18 @@ export function YoutubeEmbed({
 
 export function VideoPed() {
   return (
-    <Container>
-      <ScreenLimiter>
-        <Title>
-          JORNADA <br /> PEDAGÓGICA
-        </Title>
-        <YoutubeEmbed />
-      </ScreenLimiter>
-      <PlayIcon />
-    </Container>
+    <IO rootMargin="-100px">
+      {({ hasBeenVisible }) => (
+        <Container>
+          <ScreenLimiter>
+            <Title>
+              JORNADA <br /> PEDAGÓGICA
+            </Title>
+            {hasBeenVisible && <YoutubeEmbed />}
+          </ScreenLimiter>
+          <PlayIcon />
+        </Container>
+      )}
+    </IO>
   );
 }

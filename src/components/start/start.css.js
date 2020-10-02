@@ -5,11 +5,13 @@ import TextureLeftSvg from 'images/miro_texture_left.svg';
 import TextureRightSvg from 'images/miro_texture_right.svg';
 import LeteringSvg from 'images/miro_letering.svg';
 
+import Img from 'gatsby-image';
+
 export const Container = styled.header`
   height: 90vh;
   position: relative;
 
-  background: #6bd7cf;
+  background: ${p => p.bg || '#6bd7cf'};
 
   display: flex;
   align-items: flex-end;
@@ -20,16 +22,20 @@ export const Container = styled.header`
   /* ${MEDIA.PHONE`
     height: 70vh;
   `} */
-
 `;
 
-export const GirlImg = styled.img`
-  margin-right: 21%;
+export const ChildrenImg = styled(Img)`
+  margin-right: 30%;
   height: 90%;
 
+  opacity: ${p => (p.show ? '1' : '0')};
+  transition: opacity 0.5s;
+
   ${MEDIA.PHONE`
-    margin-right: -50%;
-  `}
+    margin-right: 0;
+    width: 315px !important;
+    height: 379.5px !important;
+  `};
 `;
 
 export const textsStyles = css`
@@ -42,6 +48,11 @@ export const textsStyles = css`
   align-items: flex-end;
 
   font-weight: bold;
+
+  ${MEDIA.PHONE`
+    align-items: flex-start;
+    height: calc(100% - 10vh);
+  `}
 
   @media (min-width: 1801px) {
     font-size: 5rem;
@@ -62,18 +73,28 @@ export const WhiteBg = styled.div`
   width: 36%;
   left: 0;
   justify-content: flex-end;
-  padding: 4.5%;
+  padding: 0 0 3% 10%;
   color: #646667;
   ${textsStyles}
+
+  ${MEDIA.PHONE`
+    padding: 40% 0 0 2%;
+    width: 40%;
+  `}
 `;
 
 export const LeteringRightText = styled.div`
   width: 30%;
   right: 0;
   justify-content: flex-start;
-  padding: 0 0 2.5% 4%;
+  padding: 15% 10% 1% 4%;
   color: white;
   ${textsStyles}
+
+  ${MEDIA.PHONE`
+    width: 60%;
+    padding: 35% 4% 0 4%;
+  `}
 `;
 
 export const YellowBg = styled.div`
@@ -94,14 +115,8 @@ export const YellowBg = styled.div`
   width: ${p => (p.right ? '30%' : '36%')};
 
   ${MEDIA.PHONE`
-    color: white;
-    font-weight: bold;
-    font-size: 2.5rem;
-
-    padding: 2%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 10vh;
+    width: ${p => (p.right ? '20%' : '40%')};
   `}
 `;
 
@@ -129,4 +144,18 @@ export const LeteringContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+`;
+
+export const LeteringBottom = styled.div`
+  height: 28vh;
+  ${MEDIA.PHONE`
+    height: 10vh;
+  `}
+`;
+
+export const DotContainer = styled.div`
+  position: absolute;
+  width: 10%;
+  height: 100px;
+  background: palegreen;
 `;

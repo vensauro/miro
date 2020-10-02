@@ -1,60 +1,69 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Container,
   YellowBg,
   Letering,
   TextureLeft,
   TextureRight,
-  GirlImg,
+  ChildrenImg,
   WhiteBg,
   LeteringRightText,
   LeteringContainer,
+  LeteringBottom,
+  DotContainer,
 } from './start.css';
 
-import GirlImgScr from 'images/img_estudante_2.png';
-import { useMediaQuery } from 'react-responsive';
+export function Start({ banners }) {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [anim, setAnim] = useState(true);
 
-export function Start() {
-  const isMobile = useMediaQuery({ maxWidth: 480 });
-  const isDesktop = !isMobile;
+  const animationTime = 10000;
+
+  useEffect(() => {
+    const interval1 = setInterval(() => {
+      setAnim(false);
+    }, animationTime - 100);
+
+    const interval2 = setInterval(() => {
+      setActiveSlide(old => (old + 1) % banners.length);
+    }, animationTime);
+
+    const interval3 = setInterval(() => {
+      setAnim(true);
+    }, animationTime + 50);
+
+    return () => {
+      clearInterval(interval1);
+      clearInterval(interval2);
+      clearInterval(interval3);
+    };
+  }, [setActiveSlide]);
 
   return (
-    <Container>
+    <Container bg={banners[activeSlide].background}>
+      <WhiteBg>{banners[activeSlide].rightText}</WhiteBg>
 
-      <WhiteBg>
-        O Miró não é uma <br />
-        escola comum.
-      </WhiteBg>
-
-      <GirlImg
-        src={GirlImgScr}
-        alt="garota com mascara fazendo simbolo da lady gaga"
+      <ChildrenImg
+        show={anim}
+        fixed={banners[activeSlide].image.src.childImageSharp.fixed}
+        alt={banners[activeSlide].image.alt}
       />
+
       <YellowBg>
-        {isDesktop ? (
-          <TextureLeft />
-        ) : (
-          <>
-            Porque os <br /> comuns não <br /> mudam o <br /> mundo.
-          </>
-        )}
+        <TextureLeft />
       </YellowBg>
-      {isDesktop && (
-        <>
-          <LeteringRightText>
-            Porque os <br /> comuns não <br /> mudam o <br /> mundo.
-          </LeteringRightText>
-          <YellowBg right>
-            <TextureRight />
-          </YellowBg>
-        </>
-      )}
-      {isDesktop && (
-        <LeteringContainer>
-          <Letering />
-          <div style={{ height: '28vh' }} />
-        </LeteringContainer>
-      )}
+
+      <LeteringRightText>{banners[activeSlide].leftText}</LeteringRightText>
+      <YellowBg right>
+        <TextureRight />
+      </YellowBg>
+
+      <LeteringContainer>
+        <Letering />
+        <LeteringBottom />
+      </LeteringContainer>
+
+      {/* <DotContainer></DotContainer> */}
     </Container>
   );
 }
