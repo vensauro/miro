@@ -3,6 +3,7 @@
     {
       "rightText": "O Miró não é uma escola comum.",
       "leftText": "Porque os comuns não mudam o mundo.",
+      "leftTextColor": "#ffffff",
       "image": {
         "src": "../images/img_banner_01.png",
         "alt": "Garota com máscara fazendo simbolo do lady gaga"
@@ -12,6 +13,7 @@
     {
       "rightText": "Seguimos todos os protocolos de segurança.",
       "leftText": "E com a supervisão do Instituto de Certificação IBES.",
+      "leftTextColor": "#e58466",
       "image": {
         "src": "../images/img_banner_02.png",
         "alt": "Criança com máscara e com sueter preto"
@@ -29,6 +31,7 @@
     {
       "rightText": "Uma jornada de conquistas, desafios e aprendizados.",
       "leftText": "Em busca do saber e crescimento pessoal.",
+      "leftTextColor": "#a53f67",
       "image": {
         "src": "../images/img_banner_04.png",
         "alt": "Criança pequena com máscara"

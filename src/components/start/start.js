@@ -54,7 +54,7 @@ export function Start({ banners }) {
         <TextureLeft />
       </YellowBg>
 
-      <LeteringRightText>{banners[activeSlide].leftText}</LeteringRightText>
+      <LeteringRightText color={banners[activeSlide]?.leftTextColor}>{banners[activeSlide].leftText}</LeteringRightText>
       <YellowBg right>
         <TextureRight />
       </YellowBg>

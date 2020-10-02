@@ -78,7 +78,7 @@ export const WhiteBg = styled.div`
   ${textsStyles}
 
   ${MEDIA.PHONE`
-    padding: 40% 0 0 2%;
+    padding: 45% 0 0 2%;
     width: 40%;
   `}
 `;
@@ -88,7 +88,7 @@ export const LeteringRightText = styled.div`
   right: 0;
   justify-content: flex-start;
   padding: 15% 10% 1% 4%;
-  color: white;
+  color: ${p => p.color || 'white'};
   ${textsStyles}
 
   ${MEDIA.PHONE`

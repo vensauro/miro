@@ -60,6 +60,7 @@ export const query = graphql`
       banners {
         rightText
         leftText
+        leftTextColor
         background
         image {
           alt
