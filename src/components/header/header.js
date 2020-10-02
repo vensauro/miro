@@ -2,7 +2,6 @@ import React from 'react';
 import posed from 'react-pose';
 import { Container, NavMiroLogo } from './header.css';
 import Nav from 'components/header/nav';
-import { useMediaQuery } from 'react-responsive';
 
 // Example of a component-specific page transition
 const AnimatedContainer = posed.div({
