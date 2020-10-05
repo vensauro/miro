@@ -12,7 +12,7 @@ import {
 import IO from 'components/io';
 
 export function YoutubeEmbed({
-  link = 'https://www.youtube-nocookie.com/embed/-bZfEEl31l0',
+  link = 'https://www.youtube-nocookie.com/embed/xYjJ5YNIwCw',
 }) {
   return (
     <StyledYoutube>
