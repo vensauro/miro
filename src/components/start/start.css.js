@@ -57,10 +57,7 @@ export const textsStyles = css`
   @media (min-width: 1801px) {
     font-size: 5rem;
   }
-  @media (max-width: 1800px) and (min-width: 1201px) {
-    font-size: 3.6rem;
-  }
-  @media (max-width: 1200px) and (min-width: 901px) {
+  @media (max-width: 1800px) and (min-width: 901px) {
     font-size: 3rem;
   }
   @media (max-width: 900px) {
@@ -80,6 +77,11 @@ export const WhiteBg = styled.div`
   ${MEDIA.PHONE`
     padding: 45% 0 0 2%;
     width: 40%;
+    ${p =>
+      p.moreTop &&
+      css`
+        padding: 35% 0 0 2%;
+      `}
   `}
 `;
 

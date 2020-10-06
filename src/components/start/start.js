@@ -42,7 +42,9 @@ export function Start({ banners }) {
 
   return (
     <Container bg={banners[activeSlide].background}>
-      <WhiteBg>{banners[activeSlide].rightText}</WhiteBg>
+      <WhiteBg moreTop={activeSlide === 3}>
+        {banners[activeSlide].rightText}
+      </WhiteBg>
 
       <ChildrenImg
         show={anim}
@@ -54,7 +56,9 @@ export function Start({ banners }) {
         <TextureLeft />
       </YellowBg>
 
-      <LeteringRightText color={banners[activeSlide]?.leftTextColor}>{banners[activeSlide].leftText}</LeteringRightText>
+      <LeteringRightText color={banners[activeSlide]?.leftTextColor}>
+        {banners[activeSlide].leftText}
+      </LeteringRightText>
       <YellowBg right>
         <TextureRight />
       </YellowBg>
